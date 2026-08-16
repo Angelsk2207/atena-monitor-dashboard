@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atena — Dashboard Quântico</title>
+  <meta name="description" content="Painel de monitoramento da infraestrutura Atena com status dos serviços, dispositivos e alertas.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Atena — Dashboard Quântico">
+  <meta property="og:description" content="Status dos serviços, dispositivos Tailscale e alertas da arquitetura Atena.">
+  <meta property="og:image" content="__ZAPIA_SITE_ORIGIN__/_z/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="__ZAPIA_SITE_ORIGIN__/_z/og.png">
+  <meta name="theme-color" content="#111827">
+  <link rel="manifest" href="__ZAPIA_SITE_URL__/manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Atena Monitor">
+  <link rel="apple-touch-icon" href="__ZAPIA_SITE_URL__/apple-touch-icon.png">
+  <style>
+    :root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#687386;--line:#e6ebf2;--ok:#138a57;--warn:#b76b00;--down:#c83b4a;--blue:#3569d4;--shadow:0 10px 28px rgba(26,42,70,.08)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}main{max-width:1100px;margin:auto;padding:28px 18px 60px}.top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:24px}.eyebrow{color:var(--blue);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}.h1{font-size:clamp(26px,5vw,42px);line-height:1.1;margin:6px 0}.sub{color:var(--muted);margin:0}.badge{background:#e9f7ef;color:var(--ok);padding:8px 12px;border-radius:999px;font-weight:700;white-space:nowrap}.section{margin-top:26px}.section h2{font-size:18px;margin:0 0 12px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}.cardhead{display:flex;align-items:center;justify-content:space-between;gap:12px}.name{font-weight:750;font-size:17px}.state{font-size:12px;font-weight:800;padding:5px 9px;border-radius:999px}.ok{color:var(--ok);background:#e7f7ef}.warn{color:var(--warn);background:#fff2dc}.down{color:var(--down);background:#ffeaed}.meta{color:var(--muted);font-size:13px;margin-top:9px}.alert{border-left:4px solid var(--warn);background:#fffaf1}.alert strong{color:var(--warn)}.foot{margin-top:28px;color:var(--muted);font-size:13px}.legend{display:flex;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:13px}.dot{display:inline-flex;align-items:center;gap:6px}.dot:before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}.oktext{color:var(--ok)}.warntext{color:var(--warn)}
+  </style>
+</head>
+<body>
+<main>
+  <header class="top">
+    <div><div class="eyebrow">Atena Swarm</div><h1>Dashboard Quântico</h1><p class="sub">Serviços, dispositivos e alertas em um só lugar.</p></div>
+    <div class="badge">Monitoramento ativo</div>
+  </header>
+
+  <section class="section"><h2>Serviços cloud</h2><div class="grid">
+    <article class="card"><div class="cardhead"><span class="name">n8n</span><span class="state ok">OK</span></div><div class="meta">HTTP 200 · status ok</div></article>
+    <article class="card"><div class="cardhead"><span class="name">FreeLLMAPI</span><span class="state ok">OK</span></div><div class="meta">HTTP 200 · resposta lenta</div></article>
+    <article class="card"><div class="cardhead"><span class="name">Scraper Quântico</span><span class="state ok">OK</span></div><div class="meta">HTTP 200 · resposta lenta</div></article>
+    <article class="card"><div class="cardhead"><span class="name">SnapDeploy</span><span class="state warn">ACORDANDO</span></div><div class="meta">HTTP 503 · container em cold start</div></article>
+  </div></section>
+
+  <section class="section"><h2>Dispositivos</h2><div class="grid">
+    <article class="card"><div class="cardhead"><span class="name">PC Windows</span><span class="state warn">VERIFICAR</span></div><div class="meta">Tailscale · conexão intermitente</div></article>
+    <article class="card"><div class="cardhead"><span class="name">Poco C85</span><span class="state warn">VERIFICAR</span></div><div class="meta">Tailscale · depende do celular estar ligado</div></article>
+  </div></section>
+
+  <section class="section"><h2>Alertas recentes</h2><div class="grid">
+    <article class="card alert"><strong>SnapDeploy em suspensão</strong><div class="meta">Aguardar o despertar. Não fazer redeploy automático.</div></article>
+    <article class="card alert"><strong>Respostas lentas</strong><div class="meta">FreeLLMAPI e Scraper podem demorar por causa do cold start do plano gratuito.</div></article>
+  </div></section>
+
+  <section class="section"><div class="card"><h2>Como os alertas chegam</h2><p class="sub">O monitor automático verifica a infraestrutura às 06h e 18h. Quando encontra falha, envia uma mensagem no chat da Zapia. Este painel é uma visão leve para consulta.</p><div class="legend"><span class="dot oktext">Operando</span><span class="dot warntext">Atenção</span></div></div></section>
+  <p class="foot">Última leitura exibida: 16/08/2026 · dados resumidos do monitor Atena.</p>
+</main>
+</body>
+</html>
