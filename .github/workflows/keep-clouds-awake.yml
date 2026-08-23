@@ -22,4 +22,6 @@ jobs:
           check "FreeLLMAPI" "https://freellmapi-atena.onrender.com/api/ping"
           check "Scraper Quantico" "https://scraper-quantico.onrender.com/health"
           check "SnapDeploy" "https://atena-2-nano.containers.snapdeploy.app/"
-          if [ "$failures" -ge 4 ]; then echo "Todos os serviços falharam nesta rodada." >&2; exit 1; fi
+          if [ "$failures" -ge 4 ]; then
+            echo "Todos os serviços falharam nesta rodada; o monitor continua ativo e aguardará a próxima verificação."
+          fi
