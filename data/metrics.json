@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-25T11:02:37.541622+00:00",
+  "updated_at": "2026-08-25T12:01:39.466042+00:00",
   "services": {
     "n8n": {
       "cpu": [
@@ -747,22 +747,22 @@
     "atena-n8n": {
       "connected": false,
       "http_status": 503,
-      "consecutive_failures": 2
+      "consecutive_failures": 3
     },
     "freellmapi-atena": {
       "connected": false,
       "http_status": 503,
-      "consecutive_failures": 2
+      "consecutive_failures": 3
     },
     "scraper-quantico": {
       "connected": false,
       "http_status": 503,
-      "consecutive_failures": 2
+      "consecutive_failures": 3
     },
     "atena-2-nano": {
       "connected": false,
       "http_status": 503,
-      "consecutive_failures": 2
+      "consecutive_failures": 3
     }
   }
 }
